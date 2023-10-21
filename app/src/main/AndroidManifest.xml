@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/inscryption_img"
-        android:label="Recycler View"
+        android:label="Leshy's Recycler View"
         android:roundIcon="@drawable/inscryption_img"
         android:supportsRtl="true"
         android:theme="@style/Theme.PRactica666"
