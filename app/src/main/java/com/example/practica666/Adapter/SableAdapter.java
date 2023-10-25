@@ -13,9 +13,13 @@ import com.example.practica666.R;
 
 import java.util.List;
 
-public class SableAdapter extends RecyclerView.Adapter<SableAdapter.ViewHolder> {
+public class SableAdapter extends RecyclerView.Adapter<SableAdapter.ViewHolder>
+implements View.OnClickListener {
 
     private List<Lightsaber> lightsabers;
+    private View.OnClickListener listener;
+
+
 
     public SableAdapter(List<Lightsaber> lightsabers){ this.lightsabers = lightsabers; }
 
@@ -24,6 +28,9 @@ public class SableAdapter extends RecyclerView.Adapter<SableAdapter.ViewHolder> 
     public SableAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View v = layoutInflater.inflate(R.layout.lightsaberitem, parent, false);
+
+        v.setOnClickListener(this);
+
         return new ViewHolder(v);
     }
 
@@ -33,8 +40,20 @@ public class SableAdapter extends RecyclerView.Adapter<SableAdapter.ViewHolder> 
         holder.setData(l);
     }
 
+
     @Override
     public int getItemCount() { return lightsabers.size(); }
+
+    public void setOnItemClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener!=null){
+            listener.onClick(v);
+        }
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

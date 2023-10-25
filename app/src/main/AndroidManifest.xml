@@ -7,25 +7,26 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/inscryption_img"
-        android:label="Leshy's Recycler View"
+        android:label="Leshy&apos;s Recycler View"
         android:roundIcon="@drawable/inscryption_img"
         android:supportsRtl="true"
         android:theme="@style/Theme.PRactica666"
         tools:targetApi="31">
         <activity
+            android:name=".Detalles"
+            android:exported="false" />
+        <activity
             android:name=".splasher"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
